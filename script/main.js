@@ -1,4 +1,26 @@
-	window.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("DOMContentLoaded", function(){
+
+	const burgerCK = document.querySelector("#burger");
+	const lineTOP = document.querySelector(".line-top");
+	const lineMID = document.querySelector(".line-mid");
+	const lineBTM = document.querySelector(".line-btm");
+//	const openSP = document.querySelector("#sidePane");
+
+	burgerCK.addEventListener("click", function(){
+		lineTOP.classList.toggle("ham-top");
+		lineMID.classList.toggle("ham-mid");
+		lineBTM.classList.toggle("ham-btm");
+//		openSP.classList.toggle("d-none");
+	}); 
+})
+
+
+
+
+
+
+
+/*	window.addEventListener("DOMContentLoaded", function(){
 			
 		const FIRSTBTN = document.querySelector("#mgBtn1");
 		const SECONDBTN = document.querySelector("#mgBtn2");
@@ -57,7 +79,7 @@
 	    }else{
 	        womanImg.classList.remove("active-woman");
 	    }
-	});
+	});*/
 	
 	    
    
