@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+:root {
+	--base-text-color: #666;
+	--base-background-color: #EEFFEB;
+	--sub-background-color: #FFFDFD;	
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* ==========  basic  ========= */
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+	color: #000;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {text-decoration: underline;}
+p, h1, h2, h3, h4, h5 ,h6 {
+	text-align: center;
+}
+
+/* ==========  class  ========= */
+.back-grey {
+	background-color: grey;
+}
+.back-blue {
+	background-color: blue;
+}
+.container {
+	overflow: hidden;
+	width: 1190px;
+	margin: 0 auto;
+	background-color: var(--base-background-color);
+}
+.mt-15 {
+	margin-top: 15rem;
+}
+.mt-10 {
+	margin-top: 10rem;
+}
+.mt-5 {
+	margin-top: 5rem;
+}
+.mt-1 {
+	margin-top: 1rem;
+}
+.d-none {
+	display: none !important;
+}
+.pos-absolute {
+	position: absolute;
+}
+.pos-fixed {
+	position: fixed;
+}
+.text-left {
+	text-align: left;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* ==========  script  ========= */
+
