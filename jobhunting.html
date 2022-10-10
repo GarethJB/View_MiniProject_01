@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Kitchen Hunter</title>
+		<link href="images/favicon.png" rel="shortcut icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="script/home.js"></script>
+	</head>
+<body>
+	<h1 class="d-none">Kitchen Hunter website</h1>
+<!-- ===========   header   ============= -->
+		<div class="container">
+		<header id="top" class="header-home">
+			<h2 class="d-none"> header / sign in, search, logo, burger</h2>
+				<nav class="header-top ">
+					<ul class="search">
+						<li><a href="#"><i class="icon-search"></i></a></li>
+					</ul>
+					<ul class="header-logo">
+						<li>
+							<a href="home.html"><img src="images/logo.png" alt="header-logo" /></a>
+						</li>
+					</ul>
+					<ul class="singIn">
+						<li><a href="signin.html">Sign In</a></li>
+					</ul>
+				</nav>
+				<nav class="header-mainNav">
+					<ul class="mainMenu mainMenu-jop">
+						<li>
+							<a href="jobhunting.html">Job Hunting</a>
+						</li>
+						<li>
+							<a href="hirestaff.html">Hire Staff</a>
+						</li>
+					</ul>
+					<ul class="subMenu">
+						<li><a href="magazine.html">Magazine</a></li>
+						<li><a href="cooklog.html">CookLog</a></li>
+						<li><a href="challenge.html">Challenge</a></li>
+						<li><a href="recipeball.html">RecipeBall</a></li>
+						<li><a href="info.html">Info</a></li>
+					</ul>
+				</nav>
+		</header>
+		</div>
+			<div class="burger-out pos-fixed">
+				<div id="burger">
+					<div class="line-top" id="line"></div>
+					<div class="line-mid" id="line"></div>
+					<div class="line-btm" id="line"></div>
+				</div>
+			</div>
+<!-- ===========   /header   ============= -->
+<!-- ===========   sidePane   ============= -->
+		<div id="sidePane" class="pos-fixed collapsed">
+			<header class="side-header">
+				<div><img src="images/side_logo.png" alt="sideLogo" class="sideLogo"></div>
+				<nav class="side-nav">
+					<ul class="side-mainNav">
+						<li><a href="jobhunting.html">job hunting</a></li>
+						<li><a href="hirestaff.html">hire staff</a></li>
+					</ul>
+					<ul class="side-subNav">
+						<li><a href="magazine.html">magazine</a></li>
+						<li><a href="cooklog.html">CookLog</a></li>
+						<li><a href="challenge.html">Challenge</a></li>
+						<li><a href="recipeball.html">RecipeBall</a></li>
+						<li><a href="info.html">Info</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div class="side-footer">
+				<p>
+					&copy; kitchen Hunter. 2022.
+				</p>
+			</div>
+		</div>
+<!-- ===========   /sidePane   ============= -->
+<!-- ===========   section   ============= -->	
+	<div class="container">
+		<section>
+			<h2 class="d-none"> section / 구직 </h2>
+			<nav>
+				<ul class="jobHunting-nav">
+					<li class="jobHunting-select"><a href="jobhunting.html">헤드헌팅</a></li>
+					<li></li>
+					<li><a href="jophunting_viewall.html">채용공고</a></li>
+					<li></li>
+					<li><a href="jobhunting_resume.html">이력서 관리</a></li>
+				</ul>
+			</nav>
+			<article>
+				<div class="headHunting">
+					<table>
+						<tr class="headHuntingTitle">
+							<td>
+								<p>업체명</p>							
+							</td>
+							<td>
+								<p>포지션</p>
+							</td>
+							<td>
+								<p>고용형태</p>
+							</td>
+							<td>
+								<p>위치</p>
+							</td>
+							<td>
+								<p class="text-left">해쉬태그</p>
+							</td>
+							<td>
+								<p>지원하기</p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>밍글스</h6>					
+								<p>파인 다이닝</p>
+							</td>
+							<td>
+								<p>퓨전한식</p>
+								<p>Demi Chef</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#미슐랭 2성</p>
+								<p class="text-left">#한식 다이닝</p>
+								<p class="text-left">#청담동</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>오스테리아 샘킴</h6>					
+								<p>하이엔드</p>
+							</td>
+							<td>
+								<p>Italian</p>
+								<p>Head Chef</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#파스타</p>
+								<p class="text-left">#와인</p>
+								<p class="text-left">#오픈 키친</p>
+								<p class="text-left">#합정역 5분</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>익스퀴진</h6>					
+								<p>파인 다이닝</p>
+							</td>
+							<td>
+								<p>French</p>
+								<p>Chef de Partie</p>
+							</td>
+							<td>
+								<p>계약직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#드라마 파스타</p>
+								<p class="text-left">#정통 프렌치</p>
+								<p class="text-left">#Cold-part</p>
+								<p class="text-left">#Sea Food Specialist</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>보나세라</h6>					
+								<p>파인 다이닝</p>
+							</td>
+							<td>
+								<p>Italian</p>
+								<p>Sous Chef</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#드라마 파스타</p>
+								<p class="text-left">#정통 이탈리안</p>
+								<p class="text-left">#메인디쉬 전문가</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>에리아</h6>					
+								<p>파인 다이닝</p>
+							</td>
+							<td>
+								<p>한식</p>
+								<p>Demi Chef</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#정통 한식</p>
+								<p class="text-left">#전통주</p>
+								<p class="text-left">#오픈 키친</p>
+								<p class="text-left">#청담동</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>레드 다이닝 룸</h6>					
+								<p>하이엔드</p>
+							</td>
+							<td>
+								<p>Italian</p>
+								<p>Head Chef</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#퓨전 이탈리안</p>
+								<p class="text-left">#소믈리에</p>
+								<p class="text-left">#오픈 키친</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>서로인 다이닝</h6>					
+								<p>차림음식</p>
+							</td>
+							<td>
+								<p>소고기 구이</p>
+								<p>Chef de Partie</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#한우 오마카세</p>
+								<p class="text-left">#축산 자격증</p>
+								<p class="text-left">#나이프 스킬</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>다이닝포레</h6>					
+								<p>하이엔드</p>
+							</td>
+							<td>
+								<p>한식</p>
+								<p>Demi Chef</p>
+							</td>
+							<td>
+								<p>인턴</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#퓨전 한식 다이닝</p>
+								<p class="text-left">#5시간 근무</p>
+								<p class="text-left">#오픈 키친</p>
+								<p class="text-left">#인턴</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>울프강 스테이크</h6>					
+								<p>하이엔드</p>
+							</td>
+							<td>
+								<p>아메리칸</p>
+								<p>Demi Chef</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#스테이크</p>
+								<p class="text-left">#립</p>
+								<p class="text-left">#아메리칸</p>
+								<p class="text-left">#가니쉬</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+						<tr class="headHunting-content">
+							<td>
+								<h6>금산제면소</h6>					
+								<p>레스토랑</p>
+							</td>
+							<td>
+								<p>중식</p>
+								<p>Sous Chef</p>
+							</td>
+							<td>
+								<p>정규직</p>
+							</td>
+							<td>
+								<p>map</p>
+							</td>
+							<td>
+								<p class="text-left">#정창욱 셰프</p>
+								<p class="text-left">#제면</p>
+								<p class="text-left">#퓨전 중식</p>
+							</td>
+							<td>
+								<br />
+								<p><a href="#" class="applicationBtn">CONTACT</a></p>
+								<br />
+								<p><a href="#" class="scrapBtn">SCRAP</a></p>
+							</td>
+						</tr>
+					</table>
+					<nav class="headHunting-page">
+						<ul>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+						</ul>
+					</nav>
+				</div>
+			</article>
+		</section>
+	</div>
+<!-- ===========   /section   ============= -->
+<!-- ===========   aside   ============= -->
+	<div class="container border-bot">
+	<aside>
+		<h2 class="d-none"> aise / nav-icon</h2>
+			<nav>
+				<ul class="navIcon">
+					<li>
+						<a href="#">
+							<img src="images/search.png" alt="search" />
+						</a>
+					</li>
+					<li>
+						<a href="#top">
+							<img src="images/top.png" alt="top" />
+						</a>
+					</li>
+					<li>
+						<a href="info.html">
+							<img src="images/person.png" alt="person" />
+						</a>
+					</li>
+				</ul>
+			</nav>
+	</aside>
+	</div>
+<!-- ===========   /aside   ============= -->
+<!-- ===========   footer   ============= -->
+	<div class="container">
+	<footer>
+	<h2 class="d-none">footer</h2>
+			<div class="footerNav">
+				<ul class="policy">
+					<li><a href="mailto:kitchenhunter@gmail.com">email</a></li>
+					<li><a href="#">group buying</a></li>
+					<li><a href="#">shipping</a></li>
+					<li><a href="#">returns</a></li>
+					<li><a href="#">contact</a></li>
+					<li><a href="#">gift</a></li>
+					<li><a href="#">refund policy</a></li>
+					<li><a href="#">faq</a></li>
+					<li><a href="#">stockists</a></li>
+				</ul>
+				<ul class="snsIcon">
+					<li><a href="#"><i class="icon-instagram"></i></a></li>
+					<li><a href="#"><i class="icon-youtube-play"></i></a></li>
+					<li><a href="#"><i class="icon-facebook"></i></a></li>
+					<li><a href="tel:+820626700300"><i class="icon-phone-sign"></i></a></li>
+				</ul>'
+			</div>
+			<div class="interest">
+				<ul>
+					<li>also of interest:</li>
+					<li><a href="#">partners</a></li>
+					<li><a href="magazine.html">magazines</a></li>
+					<li><a href="#">policy</a></li>
+				</ul>
+			</div>
+			<div class="footSign">
+				<p>&copy;kitchen Hunter .all rights reserved</p>
+			</div>
+	</footer>
+	</div>
+
+<!-- ===========   /footer   ============= -->
+	
+</body>
+</html>

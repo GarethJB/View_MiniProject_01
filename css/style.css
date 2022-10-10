@@ -1,42 +1,109 @@
 @charset "UTF-8";
 @import "reset.css";
 
+:root {
+	--base-text-color: #666;
+	--main-color: #A2BB9E;
+	--basic-color: #fff;
+	--sub-color: #506B56;	
+}
 
 /* ==========================================================================================
-										basic
+										basic frame
 ========================================================================================== */
 /* ============  header  ============= */
-header {
-	width: 1190px;
-	height: 211px;
+.header-top {
+	display: flex;
 }
-.logo-header {
-	width: 208px;
-	height: 96px;
+.header-top ul {margin: 0 auto;}
+.header-top ul:first-child {margin-left:1rem; margin-top: 2rem;}
+.header-top ul:last-child {margin-right:1rem; margin-top: 2rem;}
+.search {
+	margin-left: 10vw;
+	display: flex;
+	column-gap: 2vw;
+	font-size: 1.2vw;
+	font-weight: 600;
+}
+.singIn {
+	margin-left: 10vw;
+	display: flex;
+	column-gap: 2vw;
+	font-size: 1.2vw;
+	font-weight: 600;
+}
+
+.header-mainNav {
+	margin-top: 3vw;
+}
+.mainMenu {
+	display: flex;
+	font-size: 2vw;
+	font-weight: 600;
+}
+.mainMenu li {
 	margin: 0 auto;
+	padding: 1vw 1vw;
+	background-color: var(--basic-color); 
+	border-top: 5px double var(--main-color); 
+	border-bottom: 5px double var(--main-color);
+	font-weight: 600;
+	/* border-radius: 10px; */
+	cursor: pointer;
 }
-#navSub-top {
+.mainMenu li:hover {background-color: var(--main-color); border-radius: 3px;}
+.mainMenu li:hover a {color: var(--basic-color);}
+.mainMenu > li > a {color: var(--main-color);}
+.mainMenu-jop li:first-child {background-color: var(--main-color); border-radius: 3px;}
+.mainMenu-jop li:first-child a {color: var(--basic-color);} 
+.mainMenu-hire li:last-child {background-color: var(--main-color); border-radius: 3px;}
+.mainMenu-hire li:last-child a {color: var(--basic-color);} 
+.subMenu {
+	margin: 2rem 0 0 0;
+	padding: .3rem 0;
 	display: flex;
-	margin-top: 30px;
-	overflow: hidden;
+	font-size: 1.2vw;
+	font-weight: 600;
+	background-color: var(--main-color);
+	text-align: center;
 }
-.personal-nav {
-	display: flex;
-	flex: 4;
+.subMenu li {
+	margin: 0 .1rem;
+	padding: 10px;
+	border-bottom: 1px solid var(--main-color);
+	background-color: var(--basic-color);
+	cursor: pointer;
 }
-.personal-nav li {
-	margin: 40px 0 0 50px;
+.subMenu li:first-child {flex: 2;}
+.subMenu li:nth-child(2) {flex: 2;}
+.subMenu li:nth-child(3) {flex: 2;}
+.subMenu li:nth-child(4) {flex: 2;}
+.subMenu li:last-child {flex: 2;}
+.subMenu li a {
+	color: var(--main-color);
+	text-align: center;
 }
+.subSelect-magazine li:first-child {background-color: var(--main-color);}
+.subSelect-magazine li:first-child a {color: var(--basic-color);}
+.subSelect-cooklog li:nth-child(2) {background-color: var(--main-color);}
+.subSelect-cooklog li:nth-child(2) a {color: var(--basic-color);}
+.subSelect-challenge li:nth-child(3) {background-color: var(--main-color);}
+.subSelect-challenge li:nth-child(3) a {color: var(--basic-color);}
+.subSelect-recipeball li:nth-child(4) {background-color: var(--main-color);}
+.subSelect-recipeball li:nth-child(4) a {color: var(--basic-color);}
+.subSelect-info li:last-child {background-color: var(--main-color);}
+.subSelect-info li:last-child a {color: var(--basic-color);}
+.subMenu li:hover {background-color: var(--main-color);}
+.subMenu li:hover a {color: var(--basic-color);}
+
 .burger-out {
-	display: flex;
-	flex: 4;
+	right: 1rem;
+	top: 1rem;
 }
 #burger {
 	width: 40px;
 	height: 28px;
 	padding: 10px;
-	margin: 15px 0 0 380px;
-	background-color: var(--base-background-color);
 	cursor: pointer;
 	overflow: hidden;
 	z-index: 10;
@@ -60,157 +127,657 @@ header {
 	transform: translateY(-12px) rotate(-45deg);
 	transform-origin: center;
 }
-
-.logo-header {
-	flex: 2;
-	margin: 0 auto;
+/* =================   sidePane   ================== */
+#sidePane.collapsed {
+	right: -17.5vw;
+	overflow: hidden;
 }
-
-#navMain-top {
-	width: 1190px;
-	height: 50px;
-	margin-top: 35px;
-	background-color: var(--sub-background-color);
+#sidePane {
+	min-width: 17vw;
+	padding: .5vw .2vw;
+	margin-top: 5vw;
+	right: 1rem;
+	top: 0;
+	background-color: rgba(162, 187, 158, 0.5);
+	border-radius: 5px;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	z-index: 20;
+	transition: all .3s;
 }
-.content-nav {
-	display: flex;
-	column-gap: 3rem;
+.sideLogo {
+	margin: .5vw 0;
 }
-.content-nav li {
-	margin: 1rem auto;
+.side-nav {
+	font-weight: 500;
 }
-
+.side-mainNav {
+	padding: .5vw 1.2vw;
+	font-weight: 600;
+	font-size: 1.5vw;
+	
+}
+.side-mainNav li {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: .8vw 0;
+	margin: .8vw 0;
+	border-radius: 5px;
+}
+.side-mainNav li:hover {
+	font-weight: 900;
+}
+.side-subNav {
+	font-size: 1vw;	
+}
+.side-subNav li {
+	margin: .3vw 0;	
+}
+.side-subNav li:hover {
+	font-weight: 600;
+}
+.side-footer {
+	margin: .8vw auto;	
+}
 /* ============  aside  ============= */
 aside {
-	margin-top: 143px;
+	margin-top: 3rem;
+	border-bottom: 1px solid #000;	
 }
-.navMain-bottom {
+.navIcon {
 	display: flex;
 }
-.personalNav-bottom {
-	display: flex;
-	margin-left: 102px;
-}
-.personalNav-bottom li img {
-	width: 135px;
-	height: 64px;
-}
-.personalNav-bottom li:nth-child(2) {
-	margin-left: 78px;
-}
-.businessNav-bottom {
-	display: flex;	
-	margin-left: 290px;
-}
-.businessNav-bottom li img {
-	width: 135px;
-	height: 64px;
-}
-.businessNav-bottom li:nth-child(2) {
-	margin-left: 78px;
-}
-.navSub-bottom {
-	margin: 35px 0 10px 419px;
+.navIcon li {
+	margin: 2vw auto;
 } 
-.navSub-bottom ul {
-	display: flex;
-}
-.navSub-bottom ul li {
-	margin-left: 27px;
-}
-.border-bot {
-	border-bottom: 1px solid #675E5E;
-}
 
 /* ============  footer  ============= */
-footer {
-	text-transform: uppercase;
-}
-.footer-nav {
-	margin: 10px 0 0 10px;
+footer {text-transform: uppercase;}
+.footerNav {
+	margin: 1vw 0 0 1vw;
 	display: flex;
 }
-.footer-nav ul {
+.footerNav ul {
 	margin: 0 auto;	
 }
-.footer-nav ul:first-child {margin-left: 0;}
-.footer-nav ul:last-child {margin-right: 0;}
+.footerNav ul:first-child {margin-left: 0;}
+.footerNav ul:last-child {margin-right: 0;}
 .policy {
-	font-size: .5rem;
-	column-gap: 2rem;
+	font-size: .5vw;
+	column-gap: 2vw;
 	display: flex;
 }
 .snsIcon {
 	display: flex;
-	float: right;
+	font-size: 1.5vw;
 }
 .snsIcon li {
-	width: 40px;
-	height: 40px;
-}
-.snsIcon img {
-	width: 40px;
-	height: 40px;
+	width: 3vw;
 }
 .interest ul{
-	font-size: .5rem;
+	font-size: .5vw;
 	display: flex;
-	column-gap: 2rem;	
-	margin: 0 0 0 10px;
+	column-gap: 2vw;	
+	margin-left: 1vw;
 }
 .footSign {
-	margin: 2rem auto;
-	font-size: 1rem;
+	margin: 1vw auto;
+	font-size: 1.5vw;
 	font-weight: 600;
 }
 
 /* ==========================================================================================
-									index.html
+									home.html
 ========================================================================================== */
 /* ============  section  ============= */
 section {
-	margin-top: 19px;
+	margin-top: 5rem;
 }
 /* firstLine article */
-.firstLine {
-	display: flex;
+.firstLine {display: flex;}
+.secondLine {display: flex; margin-top: 9rem;}
+.firstLine article {margin: 0 auto;}
+.firstLine article:first-child {margin-left: 0;}
+.firstLine article:last-child {margin-right: 0;}
+.secondLine article {margin: 0 auto;}
+.secondLine article:first-child {margin-left: 0;}
+.secondLine article:last-child {margin-right: 0;}
+.homeHeadhunting {
+	border-top: 3px solid var(--sub-color);
+	padding: 1rem .5rem;	
+	width: 420px;
+	text-align: center;
 }
-.groupBuying {
-	width: 714px;
-	height: 349px;
-	margin-left: 10px;
-	background-color: var(--sub-background-color);
+.homeHeadhunter {
+	border-top: 3px solid var(--sub-color);
+	padding: 1rem .5rem;		
+	width: 420px;
+	text-align: center;
 }
-.weeklyChallenge {
-	width: 423px;
-	height: 349px;
-	margin-left: 33px;
-	background-color: var(--sub-background-color);
+.firstLine td {
+	width: 200px;
+	height: 160px;
 }
-.secondLine {
-	margin-top: 33px;
-	display: flex;
+.firstLine h6 {font-size: 1.3rem;}
+.firstLine p {font-size: 1rem;}
+.homeContact-btn {
+	padding: .2rem .4rem;
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: var(--main-color);
+	color: var(--basic-color);
+	border: 1px solid var(--main-color);
+	border-radius: 5px;
 }
-.chefChallenge {
-	width: 423px;
-	height: 349px;
-	margin-left: 10px;
-	background-color: var(--sub-background-color);	
+.homeMagazine {
+	border-top: 3px solid var(--sub-color);
+	padding: 1rem 2rem;	
+	width: 500px;
 }
-.magazine {
-	width: 714px;
-	height: 349px;
-	margin-left: 33px;
-	background-color: var(--sub-background-color);	
+.homeMagazine-text {
+	font-size: 1rem;
+	font-weight: 600;	
+}
+.homeChallenge {
+	border-top: 3px solid var(--sub-color);
+	padding: 1rem 2rem;	
+	width: 420px;
+}
+.homeChallenge-menu {
+	font-size: 1rem;
+	font-weight: 600;
+}
+.homeChallenge-text {
+	font-size: 1rem;
+	font-weight: 500;	
 }
 
+/* ==========================================================================================
+									login.html
+========================================================================================== */
+/* ------  header -------*/
+.login-logo {
+	text-align: center;
+	margin-top: 2rem;
+}
+/* ------  section -------*/
+.section-login {
+	margin: 2rem;
+}
+.login-form input {
+	margin: 1rem auto;
+	display: block;
+}
+.submit-btn {
+	padding: .6rem 2rem;
+	background-color: var(--main-color);
+	border: 1px solid var(--main-color);
+	border-radius: 10px;
+	font-size: 1.5vw;
+	color: #fff;
+	font-weight: 500;
+}
+.links {
+	font-size: 1vw;
+	margin-top: 3rem;
+}
+.links ul {
+	display: flex;
+	column-gap: .7rem;
+}
+.links li {
+	margin: 0 auto;
+}
+.links li:first-child {margin-right: 0}
+.links li:nth-child(2) {margin-left: 0; margin-right: 0; border-left: 1px solid #000;}
+.links li:nth-child(3) {margin-left: 0; margin-right: 0;}
+.links li:nth-child(4) {margin-left: 0; margin-right: 0; border-right: 1px solid #000;}
+.links li:last-child {margin-left: 0}
+/* ------  footer -------*/
+.interest-login ul {
+	font-size: .5vw;
+	display: flex;
+	column-gap: 2vw;
+}
+.interest-login li {
+	margin: 0 auto;
+}
+.interest-login li:first-child {margin-right: 0;}
+.interest-login li:nth-child(2) {margin-right: 0; margin-left: 0;}
+.interest-login li:nth-child(3) {margin-right: 0; margin-left: 0;}
+.interest-login li:last-child {margin-left: 0;}
+.footer-login {
+	margin-top: 6rem;
+}
 
+/* ==========================================================================================
+									join.html
+========================================================================================== */
+/* ------  section -------*/
+.join-feild::-webkit-input-placeholder { /* Chrome/Opera/Safari */ text-align: right;}
+.join-btn {
+	padding: .6rem 2rem;
+	background-color: var(--main-color);
+	border: 1px solid var(--main-color);
+	border-radius: 10px;
+	font-size: 1.5vw;
+	color: #fff;
+	font-weight: 500;	
+	margin-top: 1rem;
+}
+.join-form {
+	text-align: center;
+}
+
+/* ==========================================================================================
+									jobhunting.html
+========================================================================================== */
+.jobHunting-nav {
+	display: flex;
+	column-gap: 2rem;
+	font-size: 2vw;
+}
+.jobHunting-nav li {
+	padding: .5rem 1rem;	
+}
+.jobHunting-nav a {
+	color: var(--sub-color);
+	font-size: 1.5rem;	
+	font-weight: 600;
+}
+.jobHunting-select {
+	padding: .5rem 1rem;
+	background-color: var(--sub-color);
+	border-radius: 5px;
+}
+.jobHunting-select a {
+	color: var(--basic-color);	
+	font-size: 1.5rem;	
+}
+.jobHunting-nav li {margin: 0 auto;}
+.jobHunting-nav li:first-child {margin-right: 0;}
+.jobHunting-nav li:nth-child(2) {margin-left: 0; margin-right: 0; padding: 0; border-right: 1px solid var(--main-color);}
+.jobHunting-nav li:nth-child(3) {margin-left: 0; margin-right: 0;}
+.jobHunting-nav li:nth-child(4) {margin-left: 0; margin-right: 0; padding: 0; border-left: 1px solid var(--main-color);}
+.jobHunting-nav li:last-child {margin-left: 0;}
+/* ========== headHunting ========== */
+.headHunting {margin-top: 5rem;}
+.headHunting table {
+	margin: 1.5rem auto;
+}
+.headHuntingTitle p {
+	font-size: 1rem;
+	font-weight: 600;	
+}
+.headHuntingTitle td {
+	padding: 1rem 2rem;
+	margin: 1rem;	
+}
+.headHunting-content {
+	margin-top: 3rem;
+}
+.headHunting-content td {
+	border-top: 3px solid var(--main-color);
+	border-bottom: 3px double var(--main-color);
+	width: 150px;
+	min-height: 120px;
+	padding: 1rem;
+}
+.headHunting-content td:last-child {border-right: 0;}
+
+.applicationBtn {
+	padding: 0.5rem .7rem;
+	background-color: var(--main-color);
+	border: 1px solid var(--main-color);
+	border-radius: 5px;
+	color: var(--basic-color);
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+.applicationBtn:hover {color: var(--basic-color);}
+.scrapBtn {
+	font-size: 1rem;
+	font-weight: 600;
+	color:var(--sub-color);
+}
+.headHungting-keyword {padding: 0 2rem;}
+.headHungting-keyword li {margin: .5rem 0;}
+.heaHunting-menu li {margin: .5rem auto;}
+.headHunting-page ul {display: flex; column-gap: 1rem;}
+.headHunting-page li {margin: 0 auto;}
+.headHunting-page li:first-child {margin-right: 0;}
+.headHunting-page li:nth-child(2) {margin-left: 0; margin-right: 0;}
+.headHunting-page li:nth-child(3) {margin-left: 0; margin-right: 0;}
+.headHunting-page li:nth-child(4) {margin-left: 0; margin-right: 0;}
+.headHunting-page li:last-child {margin-left: 0;}
+/* ========== jobSearch ========== */
+.jobSearch {margin-top: 5rem;}
+.jobSearch h2 {font-size: 2.5rem; border-bottom: 2px solid var(--sub-color); padding: 1rem 0;}
+.jobSearch-table {margin-top: 2rem;}
+.jobSearch-title p {
+	font-size: 1.3rem;
+	font-weight: 600;	
+	text-align: left;
+}
+.jobSearch-title td {
+	width: 5%;
+}
+.checkboxArea {
+	height: 200px;
+	margin: 0 .2rem;
+}
+.checkboxArea li {
+	margin: .3rem 0;
+}
+#checka-1, #checka-2, #checka-3, #checka-4, #checka-5, #checka-6, #checka-7, #checka-8, #checka-9 {margin-bottom: .5rem;}
+#checkb-1, #checkb-2, #checkb-3, #checkb-4, #checkb-5, #checkb-6, #checkb-7, #checkb-8, #checkb-9 {margin-bottom: .5rem;}
+#checkc-1, #checkc-2, #checkc-3, #checkc-4, #checkc-5, #checkc-6, #checkc-7, #checkc-8, #checkc-9, #checkc-10, #checkc-11, #checkc-12, #checkc-13, #checkc-14, #checkc-15, #checkc-16, #checkc-17, #checkc-18 {margin-bottom: .5rem;}
+#checkd-1, #checkd-2, #checkd-3, #checkd-4, #checkd-5, #checkd-6, #checkd-7, #checkd-8, #checkd-9 {margin-bottom: .5rem;}
+#checke-1, #checke-2, #checke-3, #checke-4, #checke-5, #checke-6, #checke-7, #checke-8, #checke-9 {margin-bottom: .5rem;}
+#checkf-1, #checkf-2, #checkf-3, #checkf-4, #checkf-5, #checkf-6, #checkf-7, #checkf-8, #checkf-9 {margin-bottom: .5rem;}
+#checkg-1, #checkg-2, #checkg-3, #checkg-4, #checkg-5, #checkg-6, #checkg-7, #checkg-8, #checkg-9 {margin-bottom: .5rem;}
+.checkboxArea label {
+	font-size: 1rem;
+}
+.jobSearch-box {
+	margin-top: 2rem;
+	padding-bottom: 1rem;
+	width: 100%;
+	height: 3rem;
+	border-bottom: 2px solid var(--sub-color);
+	display: flex;
+}
+.jobSearch-box li {margin: 0 auto;}
+.jobSearch-box li:first-child {margin-right: 2rem;}
+.jobSearch-box li:last-child {margin-left: 2rem;}
+.jobSearch-box button {
+	padding: .6rem 1rem;
+	background-color: var(--main-color);
+	color: var(--basic-color);
+	border: 1px solid var(--main-color);
+	border-radius: 5px;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+/* ========== resume ========== */
+.resume {margin-top: 5rem;}
+.resumeContent-wrap h2{
+	font-size: 2rem;
+	border-bottom: 2px solid var(--sub-color); 
+	padding: 1rem 0;
+}
+.resumeContent-wrap {padding: 1rem;}
+.resumeContent {display: flex; text-align: center; margin: 1rem 0; border-bottom: 1px solid #D9D9D9; padding-bottom: 1rem;}
+.resumeContent li {margin: 0 auto;}
+.resumeContent-firstLine li:first-child {flex: 2;}
+.resumeContent-firstLine li:nth-child(2) {flex: 2;}
+.resumeContent-firstLine li:nth-child(3) {flex: 2;}
+.resumeContent-firstLine li:nth-child(3) {flex: 2;}
+.resumeContent-firstLine li:last-child {flex: 2;}
+.Summary-firstLine li {margin-left: 0;}
+.Summary-firstLine h4 {margin: 0;}
+.Summary-firstLine li:first-child {margin-left: 0; margin-right: 3rem;}
+.Summary-firstLine li:last-child {margin-right: 0;}
+.resumeEducation li:first-child {margin-left: 0; margin-right: 7rem;}
+.resumeEducation li:last-child {margin-left: 0;}
+.resumeCareer li:first-child {margin-left: 0; margin-right: 7rem;}
+.resumeCareer li:last-child {margin-left: 0;}
+.resumeCertificate li:first-child {margin-left: 0; margin-right: 7rem;}
+.resumeCertificate li:last-child {margin-left: 0;}
+.resumeAwards li:first-child {margin-left: 0; margin-right: 7rem;}
+.resumeAwards li:last-child {margin-left: 0;}
+.resumeLanguage li:first-child {margin-left: 0; margin-right: 7rem;}
+.resumeLanguage li:last-child {margin-left: 0;}
+.resumeIntroduction li:first-child {margin-left: 0; margin-right: 7rem;}
+.resumeIntroduction li:last-child {margin-left: 0;}
+.resumeIntroduction {padding: 1rem 2rem;}
+.resumeIntroduction h5 {font-size: 1.5rem; margin-bottom: 1.5rem;}
+.resumeRevise-btn {
+	margin-top: 2rem;
+	padding-bottom: 1rem;
+	width: 100%;
+	height: 3rem;
+	display: flex;	
+}
+.resumeRevise-btn li {margin: 0 auto;}
+.resumeRevise-btn button {
+	padding: .6rem 1rem;
+	background-color: var(--main-color);
+	color: var(--basic-color);
+	border: 1px solid var(--main-color);
+	border-radius: 5px;
+	font-size: 1.2rem;
+	font-weight: 600;	
+}
+
+/* ==========================================================================================
+									hirestaff.html
+========================================================================================== */
+.headHunter {margin-top: 5rem;}
+.headHunter table {
+	margin: 1.5rem auto;
+}
+.headHunterTitle p {
+	font-size: 1rem;
+	font-weight: 600;	
+}
+.headHunterTitle td {
+	padding: 1rem 2rem;
+	margin: 1rem;	
+}
+.headHunter-content {
+	margin-top: 3rem;
+}
+.headHunter-content td {
+	border-top: 3px solid var(--main-color);
+	border-bottom: 3px double var(--main-color);
+	width: 150px;
+	min-height: 120px;
+	padding: 1rem;
+}
+.headHunter-content td:last-child {border-right: 0;}
+.headHunter-page ul {display: flex; column-gap: 1rem;}
+.headHunter-page li {margin: 0 auto;}
+.headHunter-page li:first-child {margin-right: 0;}
+.headHunter-page li:nth-child(2) {margin-left: 0; margin-right: 0;}
+.headHunter-page li:nth-child(3) {margin-left: 0; margin-right: 0;}
+.headHunter-page li:nth-child(4) {margin-left: 0; margin-right: 0;}
+.headHunter-page li:last-child {margin-left: 0;}
+/* ========== job-seekerSearch ========== */
+.jobseekerSearch {margin-top: 5rem;}
+.jobseekerSearch h2 {font-size: 2.5rem; border-bottom: 2px solid var(--sub-color); padding: 1rem 0;}
+.jobseekerSearch-table {margin-top: 2rem;}
+.jobseekerSearch-title p {
+	font-size: 1.3rem;
+	font-weight: 600;	
+	text-align: left;
+}
+.jobseekerSearch-title td {
+	width: 5%;
+}
+/* ========== company profile ========== */
+.companyProfile-div {margin-top: 5rem;}
+.companyProfile-wrap h2{
+	font-size: 2rem;
+	border-bottom: 2px solid var(--sub-color); 
+	padding: 1rem 0;
+}
+.companyProfile-wrap {padding: 1rem;}
+.companyProfile {display: flex; text-align: center; margin: 1rem 0; border-bottom: 1px solid #D9D9D9; padding-bottom: 1rem;}
+.companyProfile li {margin: 0 auto;}
+.profileSummary-firstLine h4 {margin: 0;}
+.profileSummary-firstLine li:first-child {margin-left: 0; margin-right: 0;}
+.profileService li:first-child {margin-left: 0; margin-right: 7rem;}
+.profileService li:nth-child(2) {margin-left: 0; margin-right: 7rem;}
+.profileService li:last-child {margin-left: 0;}
+.profileEtc li:first-child {margin-left: 0; margin-right: 7rem;}
+.profileEtc li:last-child {margin-left: 0;}
+
+/* ==========================================================================================
+									magazine.html
+========================================================================================== */
+.magazine-article h3 {
+	font-size: 2.5rem;
+}
+.magazine-wrap {
+	border-top: 3px solid var(--sub-color);
+	padding: 2rem 1rem;
+}
+.magazine-wrap {margin-bottom: 10rem;}
+.magazineWrap-last {margin-bottom: 0;}
+.magazine-content {
+	display: flex;
+}
+.magazine-content li {margin: 0 auto;}
+.magazine-content li:first-child {margin-left:0; margin-right: 2rem;}
+.magazine-content li:last-child {margin-left: 2rem;}
+.magazine-text {width: 40rem;}
+
+/* ==========================================================================================
+									cooklog.html
+========================================================================================== */
+.cooklog-text {
+	font-size: 4vw;
+	font-weight: 600;
+	margin-top: 16vw;
+	margin-bottom: 20vw;
+}
+/* ==========================================================================================
+									challenge.html
+========================================================================================== */
+.challenge-wrap {
+	width: 600px;
+	border-top: 3px solid var(--sub-color);
+	margin: 0 auto;
+	padding: 1rem 0;
+}
+.weeklyText {font-size: 2rem;}
+.ChallengePost {font-size: 2rem; margin-top: 5rem;}
+.challengePost-wrap {
+	width: 960px;
+	border-top: 3px solid var(--sub-color);
+	margin: 0 auto;
+	padding: 1rem 0;
+}
+.challengePost-wrap ul {display: flex; margin-bottom: 3rem;}
+.challengePost-wrap li {margin: 0 auto;}
+.challengerName {font-size: 1rem; font-weight: 600; margin-top: 1rem;}
+
+/* ==========================================================================================
+									recipeball.html
+========================================================================================== */
+.recipeball-article div {
+	margin: 0 auto;
+}
+#recipeball-content {
+	width: 40rem;
+	height: 40rem;
+	border: 1.5rem solid var(--main-color);
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+#recipeball-content h4 {font-size: 2rem; margin-top: 5rem;}
+.ball-text {margin-top: .5rem;}
+.recipeBall-btn {
+	padding: .3rem .6rem;
+	margin-top: 1rem;
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: var(--basic-color);
+	color: var(--sub-color);
+	border: 1px solid var(--basic-color);
+	border-radius: 5px;
+}
+.recipeball-form {
+	position: absolute;
+	z-index: 10;
+	color: var(--basic-color);
+	width: 40rem;
+	height: 40rem;
+	text-align: center;
+}
+.recipeball-form p {font-size: 1.5rem;}
+.recipeball-searchIcon {margin-top: 2rem;}
+.recipeball-overlay {
+	width: 40rem;
+	height: 40rem;
+	position: absolute;
+	z-index: 9;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+#recipeball-content:hover #ballBack {
+	transform: translateY(-0%);
+	transition-duration: 40s;
+}
+.active-overlay {
+	transform: translateY(-92%);
+	transition-duration: 20s;	
+}
+
+/* ==========================================================================================
+									info.html
+========================================================================================== */
+.info-wrap {margin: 7rem 0; }
+.info-wrap form {text-align: center;}
+.info-password {margin-top: 1rem;}
+.info-btn {
+	margin-top: 1rem;
+	padding: .2rem .6rem;
+	background-color: var(--main-color);
+	color: var(--basic-color);
+	font-size: 1rem;
+	font-weight: 600;
+	border: 1px solid var(--main-color);
+	border-radius: 5px;
+}
 
 /* ============  media  ============= */
 
-@media screen and (max-width: 1190px) {
+@media screen and (max-width: 1000px) {
+	#sidePane {
+		display: none;
+	}
+	.burger-out {
+		display: none;
+	}
 	.container {
 		width: 100%;
 		object-fit: cover;
 	}
 }
+
+@media screen and (max-width: 480px) {
+	/* ======= home ======= */
+	.firstLine {display: block; column-gap: 3rem;}
+	.secondLine {display: block; margin-top: 4rem;}
+	.homeHeadhunting {width:90%; object-fit: cover;}
+	.homeHeadhunter {width:90%; object-fit: cover;}
+	.homeMagazine {width:80%; object-fit: cover; text-align: center;}
+	.homeChallenge  {width:80%; object-fit: cover; text-align: center;}
+	.homeChallenge-video {width: 80%; height: 80%; }
+	.homeChallenge-text {font-size: .5rem;}
+	.policy {display: none;}
+	.interest {display: none;}
+	/* ======= magazine ======= */
+	.magazine-article h3 {font-size: 2rem;}
+	.magazine-content {display: block; text-align: center;}
+	.magazine-content li {margin: 0 auto;}
+	.magazine-content li:first-child {margin-left:0; margin-right: 0;}
+	.magazine-content li:last-child {margin-left: 0;}
+	.magazine-text {width: 100%;}
+	/* ====== challenge ====== */
+	.challenge-wrap {width: 100%; object-fit: cover;}
+	.challengeVideo {width: 70%; height: 70%;}
+	.challengePost-wrap ul {display: block; margin-bottom: 3rem;}
+	.challengePost-wrap {
+	width: 100%;
+	text-align: center;
+}
+}
+
+
+
+
+
+

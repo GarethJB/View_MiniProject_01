@@ -2,8 +2,9 @@
 
 :root {
 	--base-text-color: #666;
-	--base-background-color: #EEFFEB;
-	--sub-background-color: #FFFDFD;	
+	--main-color: #A2BB9E;
+	--basic-color: #fff;
+	--sub-color: #000;	
 }
 
 * {
@@ -24,9 +25,13 @@ a {
 	text-decoration: none;
 	color: #000;
 }
-a:hover {text-decoration: underline;}
+a:hover {
+	text-decoration: none;
+	color: #000;
+}
 p, h1, h2, h3, h4, h5 ,h6 {
 	text-align: center;
+	font-size: 1vw;
 }
 
 /* ==========  class  ========= */
@@ -37,10 +42,19 @@ p, h1, h2, h3, h4, h5 ,h6 {
 	background-color: blue;
 }
 .container {
-	overflow: hidden;
 	width: 1190px;
 	margin: 0 auto;
-	background-color: var(--base-background-color);
+}
+.container-login {
+	width: 480px;
+	margin: 0 auto;	
+	position: relative;
+}
+.curser-pointer {
+	cursor: pointer;
+}
+.margin-auto {
+	margin: 0 auto;
 }
 .mt-15 {
 	margin-top: 15rem;
@@ -54,17 +68,35 @@ p, h1, h2, h3, h4, h5 ,h6 {
 .mt-1 {
 	margin-top: 1rem;
 }
+.fs-3 {
+	font-size: 3vw;
+}
+.fs-2 {
+	font-size: 2vw;
+}
+.fs-15 {
+	font-size: 1.5vw;
+}
+.fs-1 {
+	font-size: 1vw;
+}
 .d-none {
 	display: none !important;
 }
 .pos-absolute {
 	position: absolute;
 }
+.pos-relative {
+	position: relative;
+}
 .pos-fixed {
 	position: fixed;
 }
 .text-left {
 	text-align: left;
+}
+.overflow-scroll {
+	overflow: auto;
 }
 .material-symbols-outlined {
   font-variation-settings:

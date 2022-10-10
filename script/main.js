@@ -1,85 +1,131 @@
-window.addEventListener("DOMContentLoaded", function(){
-
-	const burgerCK = document.querySelector("#burger");
-	const lineTOP = document.querySelector(".line-top");
-	const lineMID = document.querySelector(".line-mid");
-	const lineBTM = document.querySelector(".line-btm");
-//	const openSP = document.querySelector("#sidePane");
-
-	burgerCK.addEventListener("click", function(){
-		lineTOP.classList.toggle("ham-top");
-		lineMID.classList.toggle("ham-mid");
-		lineBTM.classList.toggle("ham-btm");
-//		openSP.classList.toggle("d-none");
-	}); 
-})
-
-
-
-
-
-
-
-/*	window.addEventListener("DOMContentLoaded", function(){
-			
+	window.addEventListener("DOMContentLoaded", function(){
+		
+		const CONTENT = document.querySelector("#index-content");		
 		const FIRSTBTN = document.querySelector("#mgBtn1");
 		const SECONDBTN = document.querySelector("#mgBtn2");
 		const THIRDBTN = document.querySelector("#mgBtn3");
-		const MAGAZINES = document.querySelector("#magazine");		
-		
-		FIRSTBTN.addEventListener("click", function(){
-			let coords = -100 * 0 + "%";
-			MAGAZINES.style.marginLeft = coords;
-		})
-		SECONDBTN.addEventListener("click", function(){
-			let coords = -100 * 1 + "%";
-			MAGAZINES.style.marginLeft = coords;
-		})
-		THIRDBTN.addEventListener("click", function(){
-			let coords = -100 * 2 + "%";
-			MAGAZINES.style.marginLeft = coords;
-		})
+		const FORTHBTN = document.querySelector("#mgBtn4");
+		const LEFT = document.querySelector("#left");
+		const RIGHT = document.querySelector("#right");
+		let postIndex = 0;
+		let colorBlack = "#000";
+		let colorGrey = "#A2BB9E";
+		let DNONE = "none";
+		let BLOCK = "block";
+				
+		RIGHT.addEventListener("click", function(){
+			postIndex++;
+			if (postIndex >= 3) postIndex = 3;
+			let coords = -100 * postIndex;
+			CONTENT.style.marginLeft = coords + "%";
+			if (postIndex == 0) {				
+			FIRSTBTN.style.background = colorBlack
+			SECONDBTN.style.background = colorGrey
+			THIRDBTN.style.background = colorGrey
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = DNONE;			
+			} else if (postIndex == 1) {				
+			FIRSTBTN.style.background = colorGrey
+			SECONDBTN.style.background = colorBlack
+			THIRDBTN.style.background = colorGrey
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = BLOCK;			
+			}else if (postIndex == 2) {
+			FIRSTBTN.style.background = colorGrey
+			SECONDBTN.style.background = colorGrey
+			THIRDBTN.style.background = colorBlack
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = BLOCK;			
+			} else if (postIndex == 3) {
+			FIRSTBTN.style.background = colorGrey
+			SECONDBTN.style.background = colorGrey
+			THIRDBTN.style.background = colorGrey
+			FORTHBTN.style.background = colorBlack;
+			RIGHT.style.display = DNONE;			
+			LEFT.style.display = BLOCK;			
+			} 
+		})	
+		LEFT.addEventListener("click", function(){
+			postIndex--;
+			if (postIndex <= 0) postIndex = 0;				
+			let coords = -100 * postIndex;
+			CONTENT.style.marginLeft = coords + "%";
+			if (postIndex == 0) {				
+			FIRSTBTN.style.background = colorBlack
+			SECONDBTN.style.background = colorGrey
+			THIRDBTN.style.background = colorGrey
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = DNONE;			
+			} else if (postIndex == 1) {				
+			FIRSTBTN.style.background = colorGrey
+			SECONDBTN.style.background = colorBlack
+			THIRDBTN.style.background = colorGrey
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = BLOCK;			
+			}else if (postIndex == 2) {
+			FIRSTBTN.style.background = colorGrey
+			SECONDBTN.style.background = colorGrey
+			THIRDBTN.style.background = colorBlack
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = BLOCK;			
+			} else if (postIndex == 3) {
+			FIRSTBTN.style.background = colorGrey
+			SECONDBTN.style.background = colorGrey
+			THIRDBTN.style.background = colorGrey
+			FORTHBTN.style.background = colorBlack;
+			RIGHT.style.display = DNONE;			
+			LEFT.style.display = BLOCK;			
+			} 
+		})	
 				
 		FIRSTBTN.addEventListener("click", function(){
-			let colorBlack = "#000";
-			let colorGrey = "#A89F9F";
+			let coords = -100 * 0 + "%";
+			CONTENT.style.marginLeft = coords;
+			postIndex = 0;
 			FIRSTBTN.style.background = colorBlack;
 			SECONDBTN.style.background = colorGrey;
 			THIRDBTN.style.background = colorGrey;
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = DNONE;			
 		})
 		SECONDBTN.addEventListener("click", function(){
-			let colorBlack = "#000";
-			let colorGrey = "#A89F9F";
+			let coords = -100 * 1 + "%";
+			CONTENT.style.marginLeft = coords;
+			postIndex = 1;
 			SECONDBTN.style.background = colorBlack;
 			FIRSTBTN.style.background = colorGrey;
 			THIRDBTN.style.background = colorGrey;
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = BLOCK;			
 		})
 		THIRDBTN.addEventListener("click", function(){
-			let colorBlack = "#000";
-			let colorGrey = "#A89F9F";
+			let coords = -100 * 2 + "%";
+			CONTENT.style.marginLeft = coords;
+			postIndex = 2;
 			THIRDBTN.style.background = colorBlack;
 			FIRSTBTN.style.background = colorGrey;
 			SECONDBTN.style.background = colorGrey;
+			FORTHBTN.style.background = colorGrey;
+			RIGHT.style.display = BLOCK;			
+			LEFT.style.display = BLOCK;			
+		})
+		FORTHBTN.addEventListener("click", function(){
+			let coords = -100 * 3 + "%";
+			CONTENT.style.marginLeft = coords;
+			postIndex = 3;
+			FORTHBTN.style.background = colorBlack;
+			FIRSTBTN.style.background = colorGrey;
+			SECONDBTN.style.background = colorGrey;
+			THIRDBTN.style.background = colorGrey;
+			RIGHT.style.display = DNONE;			
+			LEFT.style.display = BLOCK;			
 		})
 	})
-
-	window.addEventListener("scroll",()=>{
-	    let manWoman = document.querySelector("#manWoman");
-	    let manImg = document.querySelector("#manImg");
-	    let womanImg = document.querySelector("#womanImg");
-		let contentposition = manWoman.getBoundingClientRect().top;
-	    let screenposition = window.innerHeight / 2;
-	    if(contentposition = screenposition){
-	        manImg.classList.add("active-man");
-	    }else{
-	        manImg.classList.remove("active-man");
-	    }
-	    if(contentposition = screenposition){
-	        womanImg.classList.add("active-woman");
-	    }else{
-	        womanImg.classList.remove("active-woman");
-	    }
-	});*/
-	
-	    
-   
